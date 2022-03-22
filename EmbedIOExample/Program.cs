@@ -9,7 +9,10 @@ namespace EmbedIOExample
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            var server = ServerCreate.Instance.CreateWebServer("http://localhost:5858");
+            server.RunAsync();
             Host.CreateDefaultBuilder(args).Build().Run();
+            //await System.Threading.Tasks.Task.Delay(-1);
         }
     }
 }
